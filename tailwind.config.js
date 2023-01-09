@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         black: "#000000",
+        torq: "hsl(174, 100%, 69%)",
       },
     },
   },

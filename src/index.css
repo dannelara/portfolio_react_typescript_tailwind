@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition-timing-function: linear;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,4 +21,42 @@ code {
 
 .header_text {
   font-size: 15px;
+  font-weight: 700;
+}
+
+.fill {
+  flex-grow: 1;
+}
+.hero-title {
+  /* color: white; */
+  /* color: white; */
+  font-size: clamp(2.5rem, 10vw + 0.5rem, 2.5rem);
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background: rgb(40, 40, 55);
+  background: linear-gradient(
+    344deg,
+    rgba(40, 40, 55, 1) 0%,
+    rgba(16, 16, 18, 1) 50%
+  );
+  box-shadow: 4px 6px 14px #00000036;
+  /* border-radius: 3px; */
+  color: #f9f9f9;
+  padding: 16px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  margin-top: -30px;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }

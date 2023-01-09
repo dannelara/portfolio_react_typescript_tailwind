@@ -1,10 +1,11 @@
 import React from "react";
-import { Header } from "./components/header/Header";
+import { Header, Main } from "./components";
 
 function App() {
   return (
-    <div className="min-h-screen w-full relative bg-black">
+    <div className="h-screen w-full relative bg-black flex flex-col">
       <Header />
+      <Main />
     </div>
   );
 }

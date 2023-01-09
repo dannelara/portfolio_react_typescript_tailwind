@@ -1,3 +1,3 @@
 import { Header } from "./header/Header";
-
-export { Header };
+import { Main } from "./main/Main";
+export { Header, Main };
