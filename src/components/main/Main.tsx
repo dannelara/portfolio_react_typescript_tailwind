@@ -19,9 +19,7 @@ export const Main: React.FC<MainProps> = ({}) => {
 
     if (current_section_view === sections_paths.length - 1) {
       set_current_section((prev) => (prev = 0));
-      window.location.href = "/#top";
     }
-    window.location.href = "/#top";
 
     window.location.href = sections_paths[current_section_view];
   };
