@@ -2,8 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
-  transition-timing-function: linear;
+  scroll-behavior: smooth;
+}
+
+@keyframes grow {
+  from {
+    display: 0;
+
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+.play_font {
+  font-family: "Playfair Display", serif;
 }
 body {
   margin: 0;
@@ -14,11 +40,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.text_scale {
+  font-size: 1vw;
+}
 .header_text {
   font-size: 15px;
   font-weight: 700;
@@ -36,27 +69,286 @@ code {
   text-transform: uppercase;
 }
 
-.card {
-  width: 100%;
-  height: 100%;
-  background: rgb(40, 40, 55);
-  background: linear-gradient(
-    344deg,
-    rgba(40, 40, 55, 1) 0%,
-    rgba(16, 16, 18, 1) 50%
-  );
-  box-shadow: 4px 6px 14px #00000036;
-  /* border-radius: 3px; */
-  color: #f9f9f9;
-  padding: 16px;
-  transition: all 0.3s;
+.section_title {
+  font-size: clamp(1.2rem, 10vw + 0.5rem, 1.2rem);
+  line-height: 1;
+  /* font-weight: 900; */
+  text-transform: uppercase;
 }
 
-.card:hover {
-  margin-top: -30px;
+.card {
+  background-color: #212121;
 }
+
+.algo_button {
+  display: flex;
+  height: 2em;
+  width: 90px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  /* letter-spacing: 1px; */
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+}
+
+/* .algo_button > svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+}
+
+.algo_button:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+} */
+
+.algo_button:hover {
+  /* box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff; */
+  transform: translateY(-2px);
+}
+
+.cover_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* .card:hover {
+  margin-top: -30px;
+} */
 
 .vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  text-transform: uppercase;
+}
+
+.vertical_reverse {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+}
+.controll > svg > path {
+  stroke: white;
+}
+
+.controll > svg {
+  width: 100%;
+  transform: rotate(90deg);
+}
+
+.svg_bright > svg > path {
+  stroke: white;
+}
+.fade_in {
+  animation: fadeIn 0.5s;
+}
+
+.hover_underline {
+  position: relative;
+}
+
+.hover_underline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover_underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover_underline_vertical {
+  position: relative;
+}
+
+.hover_underline_vertical:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  transform: scaleY(0);
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover_underline_vertical:hover::after {
+  transform: scaleY(1);
+  transform-origin: bottom left;
+}
+
+/* .logo_effect{
+
+} */
+
+/* .portfolio_card {
+  cursor: pointer;
+  width: 190px;
+  height: 254px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgba(233, 233, 252, 0.733);
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px rgba(243, 243, 248, 0.582);
+}
+
+.portfolio_card:hover {
+  box-shadow: -12px 12px 2px -1px rgba(254, 254, 255, 0.623);
+} */
+
+.portfolio_cards {
+  width: 90%;
+  height: 50%;
+  border-radius: 4px;
+  background: #212121;
+  display: flex;
+  gap: 5px;
+  padding: 0.4em;
+}
+
+.portfolio_cards > div {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  /* cursor: pointer; */
+  border-radius: 2px;
+  transition: all 0.5s;
+  background: #212121;
+  border: 1px solid #ede9ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio_cards > div:hover {
+  flex: 4;
+}
+
+.portfolio_cards > div span {
+  min-width: 14em;
+  padding: 0.5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+}
+
+.portfolio_cards > div:hover span {
+  transform: rotate(0);
+}
+
+/*
+Skills
+*/
+
+/* .skill {
+  border: 1px solid #ede9ea;
+
+  padding: 10px 30px;
+
+  background: #333;
+
+  color: #fff;
+}
+
+.skill span {
+  width: 100%;
+  height: 100%;
+} */
+/* .skill > svg {
+  background-color: white;
+  color: black;
+} */
+
+.skill_svg {
+  background-color: white;
+  color: black;
+}
+.skill {
+  /* font-size: 18px; */
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+  background: #212121;
+
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  border: 1px solid #fffafc;
+  border-radius: 2px;
+  position: relative;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1); */
+  color: #fff4f9;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.skill:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  color: rgb(5, 4, 4);
+  background-color: #fffdfd;
+  border: 3px solid rgb(0, 0, 0);
+
+  z-index: -1;
+}
+
+.skill:hover,
+.skill:focus > svg > path {
+  color: black;
+}
+
+.skill:hover > .not_visible {
+  background-color: white;
+  color: white;
+}
+/* {
+  color: rgb(0, 0, 0);
+} */
+
+.skill:hover:before,
+.skill:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+/* .skill:active {
+  transform: scale(0.9);
+} */
+
+.link_hover_bg:hover {
+  transition: 0.5s all ease;
+  background-color: white;
+  border-bottom: red;
+}
+
+.link_hover_bg:hover > svg {
+  color: #212121;
 }

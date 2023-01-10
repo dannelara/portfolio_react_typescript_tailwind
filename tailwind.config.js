@@ -7,6 +7,22 @@ module.exports = {
         black: "#000000",
         torq: "hsl(174, 100%, 69%)",
       },
+      screens: {
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        mdl: "1200px",
+        // => @media (min-width: 768px) { ... }
+
+        xlg: "1504px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
+      },
     },
   },
   plugins: [],
