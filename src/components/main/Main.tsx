@@ -25,9 +25,6 @@ export const Main: React.FC<MainProps> = ({}) => {
     window.location.href = sections_paths[current_section_view];
   };
 
-  useEffect(() => {
-    console.log(current_section_view);
-  }, [current_section_view]);
   return (
     <div className="h-[90%] w-full flex   items-end justify-center">
       <div className="sm: h-full md:h-5/6 w-full flex items-center justify-center">
