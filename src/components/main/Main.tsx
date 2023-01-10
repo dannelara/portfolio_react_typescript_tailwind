@@ -11,6 +11,7 @@ interface MainProps {}
 export const Main: React.FC<MainProps> = ({}) => {
   const [current_section_view, set_current_section] = useState(1);
   const sections_paths = ["/#portfolio", "/#skills", "/#contact"];
+  const sections = ["portfolio", "skills", "contact"];
 
   const next = () => {
     set_current_section((prev) => {
@@ -44,7 +45,9 @@ export const Main: React.FC<MainProps> = ({}) => {
                 </>
               ) : (
                 <>
-                  <span className="text-white vertical ">Next</span>
+                  <span className="text-white vertical_reverse ">
+                    {sections[current_section_view]}
+                  </span>
                   <span className="controll h-fit w-full flex items-center justify-center ">
                     <GrLinkNext className="text-white" />
                   </span>
@@ -54,7 +57,7 @@ export const Main: React.FC<MainProps> = ({}) => {
           </div>
         </div>
 
-        <div className="h-full sm: w-full  lg:w-4/6 flex flex-wrap overflow-y-scroll">
+        <div className="h-full sm: w-full  lg:w-4/6 flex flex-wrap overflow-y-scroll ">
           {/* <Bio /> */}
           <Portfolio />
           <Skills />
@@ -62,7 +65,7 @@ export const Main: React.FC<MainProps> = ({}) => {
           {/* <Portfolio /> */}
         </div>
 
-        <div className="sm: hidden lg:flex h-full w-2/6  test_effect">
+        <div className="sm: hidden lg:flex h-full w-2/6">
           <Hero />
         </div>
       </div>

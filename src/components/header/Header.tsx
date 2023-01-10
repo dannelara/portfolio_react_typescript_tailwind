@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import profile from "../../assets/imgs/profile.jpg";
 
-import {
-  AiFillLinkedin,
-  AiOutlineMenuUnfold,
-  AiOutlineMenuFold,
-} from "react-icons/ai";
+import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = ({}) => {
@@ -18,12 +14,12 @@ export const Header: React.FC<HeaderProps> = ({}) => {
           <div className="w-4/5 h-full items-center justify-center">
             <ul className="w-full h-full flex items-center justify-start gap-5">
               <li className="text-white  hover_underline">
-                <a href="#portfolio" className="text-sm play_font">
+                <a href="#portfolio" className="text-sm play_font header_link ">
                   Portfolio
                 </a>
               </li>
               <li className="text-white text-sm hover_underline">
-                <a href="#skills" className="text-sm play_font">
+                <a href="#skills" className="text-sm play_font header_link ">
                   Skills
                 </a>
               </li>
@@ -32,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
         </div>
         <div className="h-full w-1/2 items-end justify-end">
           <ul className="w-full h-full flex items-center justify-end gap-5">
-            <li className="text-white text-sm play_font hover_underline">
+            <li className="text-white text-sm play_font header_link  hover_underline">
               <a href="#contact">Contact</a>
             </li>
           </ul>
@@ -64,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
 
           <div className="h-[90%] w-full flex items-start justify-center flex-wrap">
             <div className="w-full flex items-center justify-around">
-              <span className="text-white text-xl border-b-2 uppercase play_font">
+              <span className="text-white text-xl border-b-2 uppercase play_font header_link ">
                 Daniel Lara
               </span>
               <div className="h-[150px] w-[150px] flex items-center justify-center rounded-full">
@@ -79,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
               <li>
                 <a href="#portfolio">
                   <span
-                    className="text-center text-sm play_font text-white hover_underline"
+                    className="text-center text-sm play_font header_link  text-white hover_underline"
                     onClick={() => set_burger_menu_active(!burger_menu_active)}
                   >
                     Portfolio
@@ -89,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
               <li>
                 <a href="#skills">
                   <span
-                    className="text-center text-sm play_font text-white hover_underline"
+                    className="text-center text-sm play_font header_link  text-white hover_underline"
                     onClick={() => set_burger_menu_active(!burger_menu_active)}
                   >
                     Skills
@@ -99,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
               <li>
                 <a href="#contact">
                   <span
-                    className="[uppdercase] text-center text-sm play_font text-white hover_underline"
+                    className="[uppdercase] text-center text-sm play_font header_link  text-white hover_underline"
                     onClick={() => set_burger_menu_active(!burger_menu_active)}
                   >
                     Contact

@@ -25,7 +25,7 @@ export const Card: React.FC<CardProps> = ({ title, children }) => {
         <span>{title}</span>
       </div>
       <div
-        className="fixed top-0 left-0 h-screen w-screen bg-black z-[10000] animate-[grow_0.5s_forwards] items-center justify-center"
+        className="fixed top-0 left-0 h-screen w-screen bg-dark_blue z-[10000] animate-[grow_0.5s_forwards] items-center justify-center"
         style={{ display: big_screen ? "flex" : "none" }}
       >
         <div className="fixed h-[10%] top-0 w-full flex items-center justify-center">

@@ -41,12 +41,12 @@ export const Contact: React.FC<ContactProps> = ({}) => {
                 <AiFillLinkedin className="text-white cursor-pointer h-full w-full" />
               </a>
 
-              <a
+              {/* <a
                 href="https://www.facebook.com/daniel.lara.982"
                 className="h-2/3 w-2/3 border-b link_hover_bg"
               >
                 <AiFillFacebook className="text-white cursor-pointer h-full w-full" />
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="w-full h-auto flex items-center justify-center">
