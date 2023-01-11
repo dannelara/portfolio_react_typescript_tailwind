@@ -37,21 +37,21 @@ export const Header: React.FC<HeaderProps> = ({}) => {
 
       <div className="sm: flex w-full md:hidden lg:hidden h-[10%] items-center justify-center">
         <div className="h-fit w-[90%] flex items-end justify-end">
-          <AiOutlineMenuUnfold
+          <AiOutlineMenuFold
             className="hover:cursor-pointer text-white text-2xl"
             onClick={() => set_burger_menu_active(!burger_menu_active)}
           />
         </div>
 
         <div
-          className="absolute h-screen top-0 left-0 right-0 bottom-0 bg-black flex-wrap fade_in"
+          className="absolute h-screen top-0 left-0 right-0 bottom-0 bg-dark_blue flex-wrap fade_in"
           style={{
             display: burger_menu_active ? "flex" : "none",
           }}
         >
           <div className="h-[10%] w-full bg-transparent z-[10000] flex items-center justify-center">
             <div className="h-fit w-[90%] flex items-end justify-end">
-              <AiOutlineMenuFold
+              <AiOutlineMenuUnfold
                 className="hover:cursor-pointer text-white text-2xl"
                 onClick={() => set_burger_menu_active(!burger_menu_active)}
               />

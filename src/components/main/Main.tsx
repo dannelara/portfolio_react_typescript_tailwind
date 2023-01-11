@@ -26,7 +26,7 @@ export const Main: React.FC<MainProps> = ({}) => {
   };
 
   return (
-    <div className="h-[90%] w-full flex   items-end justify-center">
+    <div className="h-[90%] w-full flex items-end justify-center">
       <div className="sm: h-full md:h-5/6 w-full flex items-center justify-center">
         <div className="h-full w-1/12 flex items-center justify-center">
           <div className="h-full w-fit flex items-center justify-end">

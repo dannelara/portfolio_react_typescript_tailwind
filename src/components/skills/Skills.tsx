@@ -29,7 +29,7 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
         <div className="min-h-2/3 w-[95%] flex flex-wrap gap-3">
           <div className="h-1/2 w-full  flex items-start sm: justify-end lg:justify-center flex-wrap gap-3">
             <div className="skill">
-              <SiKubernetes />
+              {/* <SiKubernetes /> */}
               <span className="play_font flex">Kubernetes</span>
             </div>
             {/* <div className="skill">
@@ -39,43 +39,43 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
               <span className="play_font flex">IoC</span>
             </div> */}
             <div className="skill">
-              <SiSemanticuireact />
+              {/* <SiSemanticuireact /> */}
               <span className="play_font flex">React</span>
             </div>
             <div className="skill">
-              <SiNextdotjs />
+              {/* <SiNextdotjs /> */}
               <span className="play_font flex">Nextjs</span>
             </div>
             <div className="skill">
-              <SiSpring />
+              {/* <SiSpring /> */}
               <span className="play_font flex">Spring</span>
             </div>
             <div className="skill">
-              <SiTypescript />
+              {/* <SiTypescript /> */}
               <span className="play_font flex">Typescript</span>
             </div>
             <div className="skill">
-              <SiJavascript />
+              {/* <SiJavascript /> */}
               <span className="play_font flex">Javascript</span>
             </div>
             <div className="skill">
-              <SiJava className="skill_svg" />
+              {/* <SiJava className="skill_svg" /> */}
               <span className="play_font flex">Java</span>
             </div>
             <div className="skill">
-              <SiStyledcomponents className="skill_svg" />
+              {/* <SiStyledcomponents className="skill_svg" /> */}
               <span className="play_font flex">Styled-components</span>
             </div>
             <div className="skill">
-              <SiTailwindcss className="skill_svg" />
+              {/* <SiTailwindcss className="skill_svg" /> */}
               <span className="play_font flex">TailwindCSS</span>
             </div>
             <div className="skill">
-              <IoLogoNodejs className="skill_svg" />
+              {/* <IoLogoNodejs className="skill_svg" /> */}
               <span className="play_font flex">Node</span>
             </div>
             <div className="skill">
-              <SiMongodb className="skill_svg" />
+              {/* <SiMongodb className="skill_svg" /> */}
               <span className="play_font flex">Mongoodb</span>
             </div>
             {/* {skills_data

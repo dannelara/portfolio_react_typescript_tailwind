@@ -100,7 +100,7 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ cnt, algoData }) => {
         span.style.backgroundColor = "transparent";
         span.style.color = "black";
       });
-      e.currentTarget.style.color = "hsl(177, 46%, 65%)";
+      e.currentTarget.style.color = "blue";
       setAlgo(parseInt(e.currentTarget.id));
     }
   };
@@ -144,13 +144,13 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ cnt, algoData }) => {
             </p>
           </button>
         </div>
-        <div className="hover:cursor-pointer text-center">
+        {/* <div className="hover:cursor-pointer text-center">
           <button className="algo_button">
             <p className="text-black p-controll h-full w-full flex items-center justify-center play_font">
               Code
             </p>
           </button>
-        </div>
+        </div> */}
         <div className="algo_button">
           <MdOutlineRestartAlt
             onClick={reset}
