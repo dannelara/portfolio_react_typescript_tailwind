@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Bio } from "../bio/Bio";
+
 import { Hero } from "../hero/Hero";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { Portfolio } from "../portfolio/Portfolio";
@@ -58,11 +58,9 @@ export const Main: React.FC<MainProps> = ({}) => {
         </div>
 
         <div className="h-full sm: w-full  lg:w-4/6 flex flex-wrap overflow-y-scroll ">
-          {/* <Bio /> */}
           <Portfolio />
           <Skills />
           <Contact />
-          {/* <Portfolio /> */}
         </div>
 
         <div className="sm: hidden lg:flex h-full w-2/6">

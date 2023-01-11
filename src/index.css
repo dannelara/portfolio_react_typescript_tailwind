@@ -34,10 +34,20 @@ Header
 .header_link {
   letter-spacing: 0.1em;
 }
+.header_text {
+  font-size: 15px;
+  font-weight: 700;
+}
 
 /*
 Main
 */
+.hero-title {
+  font-size: clamp(2.5rem, 10vw + 0.5rem, 2.5rem);
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+}
 .play_font {
   font-family: "Playfair Display", serif;
 }
@@ -63,21 +73,9 @@ code {
 .text_scale {
   font-size: 1vw;
 }
-.header_text {
-  font-size: 15px;
-  font-weight: 700;
-}
 
 .fill {
   flex-grow: 1;
-}
-.hero-title {
-  /* color: white; */
-  /* color: white; */
-  font-size: clamp(2.5rem, 10vw + 0.5rem, 2.5rem);
-  line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
 }
 
 .section_title {
@@ -85,8 +83,10 @@ code {
   line-height: 1;
   letter-spacing: 0.1em;
   /* font-weight: 900; */
+  color: white;
   text-transform: uppercase;
 }
+
 .card {
   border-top: 1px solid white;
   border-left: 1px solid white;
@@ -101,27 +101,13 @@ code {
   justify-content: center;
   background-color: #eeeeee4b;
   border-radius: 3px;
-  /* letter-spacing: 1px; */
   transition: all 0.2s linear;
   cursor: pointer;
   border: none;
   background: #fff;
 }
 
-/* .algo_button > svg {
-  margin-right: 5px;
-  margin-left: 5px;
-  font-size: 20px;
-  transition: all 0.4s ease-in;
-}
-
-.algo_button:hover > svg {
-  font-size: 1.2em;
-  transform: translateX(-5px);
-} */
-
 .algo_button:hover {
-  /* box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff; */
   transform: translateY(-2px);
 }
 
@@ -130,9 +116,6 @@ code {
   height: 100%;
   object-fit: cover;
 }
-/* .card:hover {
-  margin-top: -30px;
-} */
 
 .vertical {
   writing-mode: vertical-rl;
@@ -208,30 +191,11 @@ code {
   transform-origin: bottom left;
 }
 
-/* .logo_effect{
-
-} */
-
-/* .portfolio_card {
-  cursor: pointer;
-  width: 190px;
-  height: 254px;
-  background: rgb(255, 255, 255);
-  border-radius: 5px;
-  border: 1px solid rgba(233, 233, 252, 0.733);
-  transition: all 0.2s;
-  box-shadow: 12px 12px 2px 1px rgba(243, 243, 248, 0.582);
-}
-
-.portfolio_card:hover {
-  box-shadow: -12px 12px 2px -1px rgba(254, 254, 255, 0.623);
-} */
-
 .portfolio_cards {
   width: 90%;
   height: 50%;
   border-radius: 4px;
-  /* background: #212121; */
+
   display: flex;
   gap: 5px;
   padding: 0.4em;
@@ -241,10 +205,8 @@ code {
   height: 100%;
   flex: 1;
   overflow: hidden;
-  /* cursor: pointer; */
   border-radius: 2px;
   transition: all 0.5s;
-  /* background: #d3cdcd; */
   border: 1px solid #ede9ea;
   display: flex;
   justify-content: center;
@@ -253,6 +215,7 @@ code {
 
 .portfolio_cards > div:hover {
   flex: 4;
+  background-color: white;
 }
 
 .portfolio_cards > div span {
@@ -267,6 +230,7 @@ code {
 }
 
 .portfolio_cards > div:hover span {
+  color: rgb(27, 27, 47);
   transform: rotate(0);
 }
 
@@ -274,36 +238,13 @@ code {
 Skills
 */
 
-/* .skill {
-  border: 1px solid #ede9ea;
-
-  padding: 10px 30px;
-
-  background: #333;
-
-  color: #fff;
-}
-
-.skill span {
-  width: 100%;
-  height: 100%;
-} */
-/* .skill > svg {
-  background-color: white;
-  color: black;
-} */
-
 .skill_svg {
   background-color: white;
   color: black;
 }
 
 .skill {
-  /* font-size: 18px; */
   letter-spacing: 2px;
-  /* text-transform: uppercase; */
-  /* background: #212121; */
-
   display: inline-block;
   text-align: center;
   font-weight: bold;
@@ -311,7 +252,6 @@ Skills
   border: 1px solid #fffafc;
   border-radius: 2px;
   position: relative;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1); */
   color: #fff4f9;
   text-decoration: none;
   transition: 0.3s ease all;
@@ -343,9 +283,6 @@ Skills
   background-color: white;
   color: white;
 }
-/* {
-  color: rgb(0, 0, 0);
-} */
 
 .skill:hover:before,
 .skill:focus:before {
@@ -355,10 +292,6 @@ Skills
   opacity: 1;
 }
 
-/* .skill:active {
-  transform: scale(0.9);
-} */
-
 .link_hover_bg:hover {
   transition: 0.5s all ease;
   background-color: white;
@@ -367,4 +300,21 @@ Skills
 
 .link_hover_bg:hover > svg {
   color: #212121;
+}
+
+/*
+ Projects.
+ 
+*/
+
+.project_card {
+  width: 25%;
+  height: 90%;
+  border-radius: 30px;
+  /* background: #212121; */
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+}
+
+.project_card h1 {
+  color: black;
 }

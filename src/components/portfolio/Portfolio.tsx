@@ -2,6 +2,7 @@ import React from "react";
 import { AlgoView } from "./algo_view/AlgoView";
 import { Card } from "./card/Card";
 import algo_data from "../../assets/data/algorithms";
+import { Projects } from "../projects/Projects";
 interface PortfolioProps {}
 
 export const Portfolio: React.FC<PortfolioProps> = ({}) => {
@@ -9,7 +10,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({}) => {
     <div className="min-h-full min-w-full" id="portfolio">
       <div className="h-[5%] w-full flex items-center justify-start">
         <div className="h-full w-fit">
-          <h1 className="section_title text-white play_font">Portfolio</h1>
+          <h1 className="section_title play_font">Portfolio</h1>
         </div>
       </div>
 
@@ -19,7 +20,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({}) => {
             <AlgoView algoData={algo_data} cnt={35} />
           </Card>
           <Card title={"Projects"}>
-            <p className="text-white">TBD</p>
+            <Projects />
           </Card>
 
           <Card title={"IOT"}>
