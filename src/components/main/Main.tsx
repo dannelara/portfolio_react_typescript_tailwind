@@ -5,25 +5,32 @@ import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { Portfolio } from "../portfolio/Portfolio";
 import { Skills } from "../skills/Skills";
 import { Contact } from "../contact/Contact";
+import { GlobalStateContext } from "../../global/GlobalState";
 
 interface MainProps {}
 
 export const Main: React.FC<MainProps> = ({}) => {
-  const [current_section_view, set_current_section] = useState(1);
+  // const [current_section_view, set_current_section] = useState(1);
+
   const sections_paths = ["/#portfolio", "/#skills", "/#contact"];
+  const { current_section, set_current_section } =
+    React.useContext(GlobalStateContext);
+
   const sections = ["portfolio", "skills", "contact"];
 
   const next = () => {
-    set_current_section((prev) => {
+    set_current_section((prev: number) => {
       return prev + 1;
     });
 
-    if (current_section_view === sections_paths.length - 1) {
-      set_current_section((prev) => (prev = 0));
+    if (current_section === sections_paths.length - 1) {
+      set_current_section((prev: number) => (prev = 0));
     }
 
-    window.location.href = sections_paths[current_section_view];
+    window.location.href = sections_paths[current_section];
   };
+
+  useEffect(() => {}, [current_section]);
 
   return (
     <div className="h-[90%] w-full flex items-end justify-center">
@@ -34,7 +41,7 @@ export const Main: React.FC<MainProps> = ({}) => {
               className="h-fit w-full cursor-pointer hover_underline_vertical"
               onClick={next}
             >
-              {current_section_view === 0 ? (
+              {current_section === 0 ? (
                 <>
                   <span className="controll h-fit w-full flex items-center justify-center mb-3">
                     <GrLinkPrevious className="text-white" />
@@ -46,7 +53,7 @@ export const Main: React.FC<MainProps> = ({}) => {
               ) : (
                 <>
                   <span className="text-white vertical_reverse ">
-                    {sections[current_section_view]}
+                    {sections[current_section]}
                   </span>
                   <span className="controll h-fit w-full flex items-center justify-center ">
                     <GrLinkNext className="text-white" />
