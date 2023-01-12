@@ -1,9 +1,46 @@
-import React from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import { AiFillFacebook, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { GlobalStateContext } from "../../global/GlobalState";
 
 interface ContactProps {}
 
 export const Contact: React.FC<ContactProps> = ({}) => {
+  const { current_section, set_current_section } =
+    React.useContext(GlobalStateContext);
+
+  const ref1 = createRef<HTMLDivElement>();
+
+  const isInViewport1 = useIsInViewport(ref1);
+
+  function useIsInViewport(ref: any) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting)
+        ),
+      []
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
+
+  useEffect(() => {
+    console.log(isInViewport1);
+    if (isInViewport1) {
+      set_current_section((prev: number) => (prev = 0));
+    }
+  }, [isInViewport1]);
+
   return (
     <div className="h-full w-full" id="contact">
       <div className="h-[5%] w-full flex items-center justify-start">
@@ -49,7 +86,10 @@ export const Contact: React.FC<ContactProps> = ({}) => {
               </a> */}
             </div>
           </div>
-          <div className="w-full h-auto flex items-center justify-center">
+          <div
+            className="w-full h-auto flex items-center justify-center"
+            ref={ref1}
+          >
             <span className="text-white py-2 text-center w-fit play_font">
               Copyright 2022 - 2023, Daniel Lara, All rights reserved.
             </span>

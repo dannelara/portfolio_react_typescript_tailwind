@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import {
   SiJava,
   SiJavascript,
@@ -14,9 +14,48 @@ import {
 import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io";
 import { TbBrandNextjs } from "react-icons/tb";
 import skills_data from "../../assets/data/skills";
+import { GlobalStateContext } from "../../global/GlobalState";
 interface SkillsProps {}
 
 export const Skills: React.FC<SkillsProps> = ({}) => {
+  const { current_section, set_current_section } =
+    React.useContext(GlobalStateContext);
+  const ref1 = createRef<HTMLDivElement>();
+
+  const isInViewport1 = useIsInViewport(ref1);
+
+  function useIsInViewport(ref: any) {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting)
+        ),
+      []
+    );
+
+    useEffect(() => {
+      observer.observe(ref.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }, [ref, observer]);
+
+    return isIntersecting;
+  }
+
+  useEffect(() => {
+    console.log("skills");
+    console.log(isInViewport1);
+    if (isInViewport1) {
+      set_current_section((prev: number) => (prev = 2));
+    } else {
+      set_current_section((prev: number) => (prev = 1));
+    }
+  }, [isInViewport1]);
+
   return (
     <div className="min-h-full w-full" id="skills">
       <div className="h-[5%] w-full flex items-center justify-start">
@@ -26,7 +65,7 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
       </div>
 
       <div className="h-[95%] w-full flex items-center justify-center flex-wrap">
-        <div className="min-h-2/3 w-[95%] flex flex-wrap gap-3">
+        <div className="relative min-h-2/3 w-[95%] flex flex-wrap gap-3">
           <div className="h-1/2 w-full  flex items-start sm: justify-end lg:justify-center flex-wrap gap-3">
             <div className="skill">
               {/* <SiKubernetes /> */}
@@ -87,7 +126,9 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
                   </div>
                 );
               })} */}
+            <div className="absolute bottom-0" ref={ref1}></div>
           </div>
+
           {/* <div className="h-1/2 w-full  flex items-center sm: justify-end lg:justify-center flex-wrap gap-3">
             {skills_data
               .slice(Math.floor(skills_data.length / 2))
