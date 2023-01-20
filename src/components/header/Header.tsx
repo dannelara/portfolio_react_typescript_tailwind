@@ -8,7 +8,7 @@ export const Header: React.FC<HeaderProps> = ({}) => {
   const [burger_menu_active, set_burger_menu_active] = useState(false);
 
   return (
-    <div className="h-[10%] w-full bg-transparent z-[10000] flex items-center justify-center sticky top-0">
+    <div className="h-[10%] w-full bg-transparent flex items-center justify-center sticky top-0">
       <div className="sm: hidden h-full w-[90%] md:flex lg:flex items-center justify-between">
         <div className="h-full w-1/2  flex items-center justify-center gap-5">
           <div className="w-4/5 h-full items-center justify-center">

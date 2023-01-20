@@ -13,7 +13,8 @@ import {
 } from "react-icons/si";
 import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io";
 import { TbBrandNextjs } from "react-icons/tb";
-import skills_data from "../../assets/data/skills";
+import skills_data from "@data/skills";
+
 import { GlobalStateContext } from "../../global/GlobalState";
 interface SkillsProps {}
 
@@ -47,8 +48,6 @@ export const Skills: React.FC<SkillsProps> = ({}) => {
   }
 
   useEffect(() => {
-    console.log("skills");
-    console.log(isInViewport1);
     if (isInViewport1) {
       set_current_section((prev: number) => (prev = 2));
     } else {

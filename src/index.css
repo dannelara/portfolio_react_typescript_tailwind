@@ -29,6 +29,14 @@
 }
 
 /*
+text styles
+*/
+
+.default_text {
+  font-size: small;
+  color: white;
+}
+/*
 Header
 */
 .header_link {
@@ -308,13 +316,38 @@ Skills
 */
 
 .project_card {
-  width: 25%;
-  height: 90%;
-  border-radius: 30px;
-  /* background: #212121; */
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  transition: all 0.2s linear;
+  width: 45%;
+  height: 80%;
+  min-width: 550px;
 }
 
-.project_card h1 {
-  color: black;
+/* .project_card:hover {
+  background-color: rgb(255, 255, 255);
+} */
+
+/* .project_card:hover .project_card__content h1 {
+  color: rgb(0, 0, 0);
 }
+
+.project_card :hover .content {
+  transform: rotateY(0.5turn);
+} */
+
+/* .project_card_content {
+  transform: rotateY(1turn);
+} */
+
+/*
+queries
+*/
+@media screen and (max-width: 1600px) {
+  .project_card {
+    width: 100%;
+    min-width: 150px;
+  }
+}
+
+/*
+test
+*/

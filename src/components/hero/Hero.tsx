@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../assets/imgs/profile_v2.jpg";
+import profile from "../../assets/imgs/profile.jpg";
 interface HeroProps {}
 
 export const Hero: React.FC<HeroProps> = ({}) => {
