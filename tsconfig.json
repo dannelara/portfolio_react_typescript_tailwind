@@ -3,10 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@data/*": ["src/assets/data/*"],
-      "hero_image": ["src/assets/imgs/profile.jpg"],
-      "@utils/*": ["src/"]
+      "@utils/*": ["src/utils/*"]
     },
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,

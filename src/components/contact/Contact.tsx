@@ -35,7 +35,6 @@ export const Contact: React.FC<ContactProps> = ({}) => {
   }
 
   useEffect(() => {
-    console.log(isInViewport1);
     if (isInViewport1) {
       set_current_section((prev: number) => (prev = 0));
     }

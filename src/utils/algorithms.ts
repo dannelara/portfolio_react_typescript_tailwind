@@ -1,4 +1,4 @@
-const sleep = (ms: number) => {
+const sleep = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
@@ -21,7 +21,7 @@ export const insert_sort = async (
   delay: number,
   PRIMARY: string,
   SECONDARY: string
-) => {
+): Promise<void> => {
   for (let i = 0; i < vals.length; i++) {
     for (let j = i; j > 0; j--) {
       if (
@@ -102,7 +102,7 @@ const _quick_sort = async (
   PRIMARY: string,
   SECONDARY: string,
   delay: number
-) => {
+): Promise<void> => {
   let index: number;
 
   if (items.length > 1) {
@@ -122,7 +122,7 @@ export const quick_sort = async (
   delay: number,
   PRIMARY: string,
   SECONDARY: string
-) => {
+): Promise<void> => {
   await _quick_sort(items, 0, items.length - 1, PRIMARY, SECONDARY, delay);
 };
 
@@ -172,7 +172,7 @@ export const heap_sort = async (
   delay: number,
   PRIMARY: string,
   SECONDARY: string
-) => {
+): Promise<void> => {
   let start = 0;
   offset = start;
   last = items.length - 1;
