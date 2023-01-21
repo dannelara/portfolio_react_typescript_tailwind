@@ -16,6 +16,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import skills_data from "@data/skills";
 
 import { GlobalStateContext } from "../../global/GlobalState";
+
 interface SkillsProps {}
 
 export const Skills: React.FC<SkillsProps> = ({}) => {
