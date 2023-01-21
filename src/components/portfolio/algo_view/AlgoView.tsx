@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineRestartAlt } from "react-icons/md";
-
-// import { heap_sort, insert_sort, quick_sort } from "@utils/algorithms";
-import { hello } from "@utils/test";
-import { Bar } from "./bar/Bar";
+import { heap_sort, insert_sort, quick_sort } from "utils/algorithms";
+import { Bar } from "utils/Bar";
 
 const PRIMARY_COLOR = "white";
 const SECONDARY_COLOR = "blue";
@@ -30,7 +28,6 @@ interface AlgoViewProps {
 }
 
 export const AlgoView: React.FC<AlgoViewProps> = ({ cnt, algoData }) => {
-  console.log(hello);
   const [active, setActive] = useState(false);
 
   const [values, setValues] = useState<BarProps[]>([]);
@@ -69,20 +66,20 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ cnt, algoData }) => {
         ) as HTMLCollectionOf<HTMLElement>
       );
 
-      // switch (algo) {
-      //   case 0:
-      //     await heap_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
-      //     break;
-      //   case 1:
-      //     await quick_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
-      //     break;
-      //   case 2:
-      //     await insert_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
-      //     break;
-      //     break;
-      //   default:
-      //     break;
-      // }
+      switch (algo) {
+        case 0:
+          await heap_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+          break;
+        case 1:
+          await quick_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+          break;
+        case 2:
+          await insert_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+          break;
+          break;
+        default:
+          break;
+      }
 
       setActive((prev) => (prev = false));
     }

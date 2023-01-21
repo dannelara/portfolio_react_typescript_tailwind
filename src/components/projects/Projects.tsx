@@ -1,7 +1,6 @@
 import React from "react";
 import { ProjectCard } from "./project_card/ProjectCard";
 import { Tokenizer } from "./tokenizer/Tokenizer";
-import project_data from "@data/projects";
 
 interface ProjectsProps {}
 

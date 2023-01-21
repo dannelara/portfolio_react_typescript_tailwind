@@ -1,8 +1,7 @@
 import React from "react";
-import profile from "../../assets/imgs/profile.jpg";
-interface HeroProps {}
+import profile from "assets/imgs/profile.jpg";
 
-export const Hero: React.FC<HeroProps> = ({}) => {
+export const Hero: React.FC = ({}) => {
   return (
     <div className="card flex items-center justify-center h-full w-full">
       <div className="h-full w-2/3 overflow-hidden">

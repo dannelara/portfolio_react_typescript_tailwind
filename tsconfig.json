@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@data/*": ["src/assets/data/*"],
-      "@utils/*": ["src/utils/*"]
-    },
+    "baseUrl": "./src",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

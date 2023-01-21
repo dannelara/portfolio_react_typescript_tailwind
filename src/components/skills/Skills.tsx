@@ -13,9 +13,7 @@ import {
 } from "react-icons/si";
 import { IoLogoJavascript, IoLogoNodejs } from "react-icons/io";
 import { TbBrandNextjs } from "react-icons/tb";
-import skills_data from "@data/skills";
-
-import { GlobalStateContext } from "../../global/GlobalState";
+import { GlobalStateContext } from "global/GlobalState";
 
 interface SkillsProps {}
 

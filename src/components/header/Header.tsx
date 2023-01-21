@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import profile from "../../assets/imgs/profile.jpg";
+import profile from "assets/imgs/profile.jpg";
 
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
-interface HeaderProps {}
 
-export const Header: React.FC<HeaderProps> = ({}) => {
+export const Header: React.FC = ({}) => {
   const [burger_menu_active, set_burger_menu_active] = useState(false);
 
   return (
