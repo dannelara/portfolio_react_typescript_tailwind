@@ -8,7 +8,7 @@ interface ProjectCardProps {
   img_url?: String;
   how_to?: String;
   command?: String;
-  description: String;
+  description: String[];
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -46,8 +46,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
 
           <div className="h-[90%] w-[90%] flex flex-wrap items-center justify-center gap-5 overflow-y-scroll">
-            <div className="h-fit w-full flex items-center justify-center">
-              <p className="play_font text-base">{description}</p>
+            <div className="h-fit w-full flex items-center justify-center flex-wrap gap-3">
+              {description.map((part, k) => (
+                <p className="play_font text-base" key={k}>
+                  {part}
+                </p>
+              ))}
             </div>
 
             {how_to && (
@@ -70,13 +74,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
             )}
 
-            <div className="h-fit w-full flex items-center justify-center">
-              <img
-                src={`${img_url}`}
-                alt="project image"
-                className="bg-cover"
-              />
-            </div>
+            {img_url && (
+              <div className="h-fit w-full flex items-center justify-center">
+                <img
+                  src={`${img_url}`}
+                  alt="project image"
+                  className="bg-cover"
+                />
+              </div>
+            )}
 
             <div className="h-1/5 w-full flex items-center justify-center">
               <button className="button_default" onClick={handleClick}>
@@ -107,6 +113,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <div className="h-[10%] w-full flex items-center justify-center">
           <div className="h-full w-[90%] flex items-center justify-end">
+            <div className="h-fit w-full flex items-center justify-center">
+              <h1 className="section_title play_font">{title}</h1>
+            </div>
             <IoMdClose
               onClick={handleClick}
               className="cursor-pointer text-white text-2xl"

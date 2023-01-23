@@ -4,6 +4,7 @@ import { ProjectCard } from "./project_card/ProjectCard";
 import tokenizer_img from "assets/imgs/tokenizer.jpg";
 
 const Tokenizer = React.lazy(() => import("utils/tokenizer/Tokenizer"));
+const DocFinder = React.lazy(() => import("utils/docFinder/DocFinder"));
 
 export const Projects: React.FC = ({}) => {
   return (
@@ -14,7 +15,9 @@ export const Projects: React.FC = ({}) => {
           img_url={tokenizer_img}
           how_to="This project is available through NPM, which is a library and package manager. Run the following npm command to install the npm package to your project"
           command="npm install mytokenizerdaniel --save"
-          description="A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError."
+          description={[
+            "A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError.",
+          ]}
         >
           <Suspense fallback={<div>Loading</div>}>
             <Tokenizer />
@@ -22,18 +25,27 @@ export const Projects: React.FC = ({}) => {
         </ProjectCard>
 
         <ProjectCard
+          title="Document finder"
+          description={[
+            "Government data, such as information on public expenditure, public registers and demographic statistics, are an important resource for individuals, organisations and businesses. Making government data publicly available can increase transparency, accountability and participation in government decision-making. It also enables researchers, journalists and individuals to analyse and understand the social, economic and political factors that shape our societies.",
+            "By providing access to state data, Document finder helps to promote a more informed and engaged citizenry, as well as support research and innovation. Whether you're a researcher, journalist, or simply someone interested in learning more about your community, this application is a valuable resource for discovering and understanding the desicions that shapes our world.",
+          ]}
+        >
+          <DocFinder />
+        </ProjectCard>
+
+        <ProjectCard
           title="Finder"
-          description="This is jsut a test description that is used to test this part of the project okej. This is jsut a test description that is used to test this part of the project okej."
+          description={[
+            "A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError.",
+          ]}
         ></ProjectCard>
 
         <ProjectCard
           title="Finder"
-          description="This is jsut a test description that is used to test this part of the project okej."
-        ></ProjectCard>
-
-        <ProjectCard
-          title="Finder"
-          description="This is jsut a test description that is used to test this part of the project okej."
+          description={[
+            "A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError.",
+          ]}
         ></ProjectCard>
       </div>
     </div>

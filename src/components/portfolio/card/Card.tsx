@@ -23,7 +23,7 @@ export const Card: React.FC<CardProps> = ({ title, children }) => {
         className="h-full w-full flex items-center justify-center cursor-pointer"
         onClick={handleClick}
       >
-        <span>{title}</span>
+        <span className="transform_span">{title}</span>
       </div>
       <div
         className="absolute top-0 left-0 h-full w-full bg-dark_blue z-[500] animate-[grow_0.5s_forwards] flex flex-wrap"

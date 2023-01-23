@@ -63,14 +63,8 @@ const Tokenizer: React.FC<TokenizerProps> = ({}) => {
   // console.log(mathTokenizer.getActiveToken());
   return (
     <div className="h-full w-full flex items-center justify-center ">
-      <div className="sm: w-[90%] sm: h-[90%] md:w-3/4 md:h-2/3  flex_childred_full border-2">
-        <div className="h-[10%] flex items-center justify-center">
-          <div className="h-fit w-full flex items-center justify-center">
-            <h1 className="section_title play_font ">Tokenizer</h1>
-          </div>
-        </div>
-
-        <div className="sm: h-fit md:h-[10%] w-full flex items-center justify-center">
+      <div className="sm: w-[90%] sm: h-[90%] md:w-3/4 md:h-2/3  flex_childred_full flex flex-wrap border-2">
+        <div className="sm: h-fit md:h-[10%] w-full flex items-center justify-center py-4">
           <div className="sm: flex-wrap w-full h-full flex items-center justify-center gap-4">
             <input
               className="input_default sm: w-[90%] md:w-3/4"
