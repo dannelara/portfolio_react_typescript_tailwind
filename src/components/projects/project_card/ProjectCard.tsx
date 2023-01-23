@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiFillCopy } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 
 interface ProjectCardProps {
   title: String;
   children?: JSX.Element | JSX.Element[];
+  img_url?: String;
+  how_to?: String;
+  command?: String;
   description: String;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   children,
+  img_url,
+  how_to,
   description,
+  command,
 }) => {
   const [project_active, set_project_active] = useState(false);
   const [project_info_active, set_project_info_active] = useState(false);
@@ -19,30 +26,68 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     set_project_active(!project_active);
   };
 
+  const copyText = async (e: any) => {
+    if ("clipboard" in navigator) {
+      return await navigator.clipboard.writeText(e.currentTarget.id);
+    } else {
+      return document.execCommand("copy", true, e.currentTarget.id);
+    }
+  };
+
   return (
-    <div className="project_card border-2 rounded-md">
+    <div className="project_card border-2 rounded-md flex items-end">
       {project_info_active ? (
-        <div
-          className="project_card_content h-[90%] w-full  flex items-center justify-center flex-wrap cursor-pointer"
-          onClick={() => set_project_info_active(!project_info_active)}
-        >
-          <div className="flex flex-wrap items-center justify-center gap-5">
-            <div className="h-fit w-[90%] flex items-center justify-center text-center sm: overflow-y-scroll lg:overflow-y-hidden">
-              <h1 className="text-white play_font">{description}</h1>
-            </div>
+        <div className="project_card_content h-full w-full flex items-center justify-center flex-wrap">
+          <div className="h-[10%] w-[90%] flex items-center justify-end">
+            <IoMdClose
+              onClick={() => set_project_info_active(!project_info_active)}
+              className="cursor-pointer text-black text-2xl"
+            />
+          </div>
+
+          <div className="h-[90%] w-[90%] flex flex-wrap items-center justify-center gap-5 overflow-y-scroll">
             <div className="h-fit w-full flex items-center justify-center">
-              <button
-                className="play_font border-2 bg-white hover:scale-[110%] py-1 px-1 text-black"
-                onClick={handleClick}
-              >
-                Try it out!
+              <p className="play_font text-base">{description}</p>
+            </div>
+
+            {how_to && (
+              <div className="h-fit w-full flex flex-wrap items-center justify-center gap-4 flex_childred_full">
+                <h1 className="gray_border_bottom text-xl font_play">
+                  How to use
+                </h1>
+                <p className=" play_font text-base">{how_to}</p>
+
+                <div className="bg-section_dark flex items-center">
+                  <p className=" text-white py-2 px-2">{command}</p>
+                  <div className="flex h-[90%] items-start justify-start">
+                    <AiFillCopy
+                      className="text-white h-full cursor-pointer"
+                      id={`${command}`}
+                      onClick={copyText}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="h-fit w-full flex items-center justify-center">
+              <img
+                src={`${img_url}`}
+                alt="project image"
+                className="bg-cover"
+              />
+            </div>
+
+            <div className="h-1/5 w-full flex items-center justify-center">
+              <button className="button_default" onClick={handleClick}>
+                Try it out
               </button>
             </div>
           </div>
         </div>
       ) : (
         <div
-          className="h-[90%] w-full flex items-center justify-center flex-wrap cursor-pointer"
+          className="h-[90%] w-full flex items-center justify-center flex-wrap cursor-pointer "
           onClick={() => set_project_info_active(!project_info_active)}
         >
           <div className="flex flex-wrap gap-2">
@@ -62,7 +107,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <div className="h-[10%] w-full flex items-center justify-center">
           <div className="h-full w-[90%] flex items-center justify-end">
-            <AiOutlineClose
+            <IoMdClose
               onClick={handleClick}
               className="cursor-pointer text-white text-2xl"
             />

@@ -7,6 +7,8 @@ module.exports = {
         dark_blue: "rgb(27, 27, 47)",
         bright: "rgba(255, 255, 255, 0.9)",
         torq: "hsl(174, 100%, 69%)",
+        border_gray: "#30363d",
+        section_dark: "#161b22",
       },
       screens: {
         sm: "640px",

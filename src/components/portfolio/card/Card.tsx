@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
-import { GlobalStateContext } from "../../../global/GlobalState";
+
+import { IoMdClose } from "react-icons/io";
+import { GlobalStateContext } from "global/GlobalState";
 
 interface CardProps {
   title: String;
@@ -30,7 +31,7 @@ export const Card: React.FC<CardProps> = ({ title, children }) => {
       >
         <div className="h-[10%] w-full flex items-center justify-center">
           <div className="h-full w-[90%] flex items-center justify-end">
-            <AiOutlineClose
+            <IoMdClose
               onClick={handleClick}
               className="cursor-pointer text-white text-2xl"
             />
