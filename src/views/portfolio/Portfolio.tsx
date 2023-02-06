@@ -22,10 +22,6 @@ export const Portfolio: React.FC<PortfolioProps> = ({}) => {
           <Card title={"Projects"}>
             <Projects />
           </Card>
-
-          <Card title={"IOT"}>
-            <p className="text-white">TBD</p>
-          </Card>
         </div>
       </div>
     </div>

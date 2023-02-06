@@ -9,8 +9,8 @@ const DocFinder = React.lazy(() => import("components/docFinder/DocFinder"));
 
 export const Projects: React.FC = ({}) => {
   return (
-    <div className="h-full w-full overflow-y-scroll flex items-center justify-center flex-wrap">
-      <div className="h-[95%] w-[90%] flex items-center justify-center gap-3 flex-wrap">
+    <div className="h-full w-full  flex items-center justify-center flex-wrap">
+      <div className="h-[95%] w-[90%] overflow-y-scroll flex items-center justify-center gap-3 flex-wrap">
         <ProjectCard
           title="The moviedb"
           img_url={the_movie_db_img}
