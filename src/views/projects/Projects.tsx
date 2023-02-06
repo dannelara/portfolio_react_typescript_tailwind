@@ -16,7 +16,7 @@ export const Projects: React.FC = ({}) => {
           img_url={the_movie_db_img}
           link="https://themoviedb-chi.vercel.app/"
           description={[
-            "The movies DB is a responsive SPA application where users can see information about movies, search for a specific and movie discover different movie genres",
+            "The movies DB is a responsive SPA application where users can see information about movies, search for a specific movie and discover different movie genres",
           ]}
         ></ProjectCard>
         <ProjectCard
