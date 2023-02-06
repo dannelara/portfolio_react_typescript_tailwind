@@ -101,15 +101,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       ) : (
         <div
-          className="h-[90%] w-full flex items-center justify-center flex-wrap cursor-pointer "
+          className="h-full w-full flex items-center justify-center flex-wrap cursor-pointer project_front"
           onClick={() => set_project_info_active(!project_info_active)}
         >
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 ">
             <div className="h-fit w-full flex items-center justify-center">
-              <h1 className="section_title play_font">{title}</h1>
+              <h1 className="section_title play_font project_item">{title}</h1>
             </div>
             <div className="h-fit w-full flex items-center justify-center">
-              <p className="default_text play_font">Read more...</p>
+              <p className="default_text play_font project_title project_item">
+                Read more...
+              </p>
             </div>
           </div>
         </div>
