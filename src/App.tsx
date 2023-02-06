@@ -1,5 +1,6 @@
 import React from "react";
-import { Header, Main } from "./components";
+import { Main } from "views";
+import { Header } from "components";
 import GlobalState from "./global/GlobalState";
 
 function App() {
