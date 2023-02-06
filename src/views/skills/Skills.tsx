@@ -1,34 +1,12 @@
 import React, { createRef, useEffect, useMemo, useState } from "react";
 import { GlobalStateContext } from "global/GlobalState";
+import useIsInViewport from "utils/useIsInViewport";
 
 export const Skills: React.FC = ({}) => {
-  const { current_section, set_current_section } =
-    React.useContext(GlobalStateContext);
+  const { set_current_section } = React.useContext(GlobalStateContext);
   const ref1 = createRef<HTMLDivElement>();
 
   const isInViewport1 = useIsInViewport(ref1);
-
-  function useIsInViewport(ref: any) {
-    const [isIntersecting, setIsIntersecting] = useState(false);
-
-    const observer = useMemo(
-      () =>
-        new IntersectionObserver(([entry]) =>
-          setIsIntersecting(entry.isIntersecting)
-        ),
-      []
-    );
-
-    useEffect(() => {
-      observer.observe(ref.current);
-
-      return () => {
-        observer.disconnect();
-      };
-    }, [ref, observer]);
-
-    return isIntersecting;
-  }
 
   useEffect(() => {
     if (isInViewport1) {

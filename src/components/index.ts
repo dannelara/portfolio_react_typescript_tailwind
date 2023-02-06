@@ -5,4 +5,14 @@ import { Card } from "./card/Card";
 import DocFinder from "./docFinder/DocFinder";
 import Tokenizer from "./tokenizer/Tokenizer";
 import { Bar } from "./bar/Bar";
-export { Header, Hero, ProjectCard, Card, DocFinder, Tokenizer, Bar };
+import { SectionTracker } from "./sectionTracker/SectionTracker";
+export {
+  Header,
+  Hero,
+  ProjectCard,
+  Card,
+  DocFinder,
+  Tokenizer,
+  Bar,
+  SectionTracker,
+};
