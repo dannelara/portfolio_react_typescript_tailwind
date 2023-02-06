@@ -1,15 +1,24 @@
 import React, { Suspense } from "react";
-import { ProjectCard } from "./project_card/ProjectCard";
+import { ProjectCard } from "components";
 
 import tokenizer_img from "assets/imgs/tokenizer.jpg";
+import the_movie_db_img from "assets/imgs/the_movies.jpg";
 
-const Tokenizer = React.lazy(() => import("utils/tokenizer/Tokenizer"));
-const DocFinder = React.lazy(() => import("utils/docFinder/DocFinder"));
+const Tokenizer = React.lazy(() => import("components/tokenizer/Tokenizer"));
+const DocFinder = React.lazy(() => import("components/docFinder/DocFinder"));
 
 export const Projects: React.FC = ({}) => {
   return (
     <div className="h-full w-full overflow-y-scroll flex items-center justify-center flex-wrap">
       <div className="h-[95%] w-[90%] flex items-center justify-center gap-3 flex-wrap">
+        <ProjectCard
+          title="The moviedb"
+          img_url={the_movie_db_img}
+          link="https://themoviedb-chi.vercel.app/"
+          description={[
+            "The movies DB is a responsive SPA application where users can see information about movies, search for a specific and movie discover different movie genres",
+          ]}
+        ></ProjectCard>
         <ProjectCard
           title="Tokenizer"
           img_url={tokenizer_img}
@@ -33,20 +42,6 @@ export const Projects: React.FC = ({}) => {
         >
           <DocFinder />
         </ProjectCard>
-
-        <ProjectCard
-          title="Finder"
-          description={[
-            "A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError.",
-          ]}
-        ></ProjectCard>
-
-        <ProjectCard
-          title="Finder"
-          description={[
-            "A tokenizer breaks streams of text into tokens, usually by looking for whitespaces. This tokenizer creates tokens with the help of user given lexical grammar and returns an object which you can use to traverse the tokens found inside of the provided string input. If an invalid character is found, it will throw a TypeError.",
-          ]}
-        ></ProjectCard>
       </div>
     </div>
   );

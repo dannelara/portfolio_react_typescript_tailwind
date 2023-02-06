@@ -9,6 +9,7 @@ interface ProjectCardProps {
   how_to?: String;
   command?: String;
   description: String[];
+  link?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,6 +19,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   how_to,
   description,
   command,
+  link,
 }) => {
   const [project_active, set_project_active] = useState(false);
   const [project_info_active, set_project_info_active] = useState(false);
@@ -85,9 +87,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
 
             <div className="h-1/5 w-full flex items-center justify-center">
-              <button className="button_default" onClick={handleClick}>
-                Try it out
-              </button>
+              {link ? (
+                <a href={`${link}`} target="_blank" className="button_default">
+                  Try it out
+                </a>
+              ) : (
+                <button className="button_default" onClick={handleClick}>
+                  Try it out
+                </button>
+              )}
             </div>
           </div>
         </div>

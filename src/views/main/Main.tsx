@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-import { Hero } from "../hero/Hero";
+import { Hero } from "components";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
-import { Portfolio } from "../portfolio/Portfolio";
-import { Skills } from "../skills/Skills";
-import { Contact } from "../contact/Contact";
-import { GlobalStateContext } from "../../global/GlobalState";
+import { Portfolio } from "views";
+import { Skills } from "views";
+import { Contact } from "views";
+import { GlobalStateContext } from "global/GlobalState";
 
 interface MainProps {}
 
 export const Main: React.FC<MainProps> = ({}) => {
-  // const [current_section_view, set_current_section] = useState(1);
-
   const sections_paths = ["/#portfolio", "/#skills", "/#contact"];
   const { current_section, set_current_section } =
     React.useContext(GlobalStateContext);

@@ -3,8 +3,6 @@ export async function fetchArticles(
   keyword: String,
   page: number,
   filter_options?: { start: any; end: any }
-
-  //   setFilters: (arg0: any) => any
 ) {
   const currentPage = page ? page : 1;
 
@@ -22,10 +20,7 @@ export async function fetchArticles(
 
   try {
     const response = await fetch(new URL(url));
-
     const answer = await response.json();
-    // setFilters && setFilters(answer);
-
     return answer;
   } catch (error) {
     console.error(error);

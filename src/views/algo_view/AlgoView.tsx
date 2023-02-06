@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineRestartAlt } from "react-icons/md";
 import { heap_sort, insert_sort, quick_sort } from "utils/algorithms";
-import { Bar } from "utils/Bar";
+import { Bar } from "components";
 
 const PRIMARY_COLOR = "white";
 const SECONDARY_COLOR = "blue";

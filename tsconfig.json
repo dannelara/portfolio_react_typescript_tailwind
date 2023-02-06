@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
+    "paths": {
+      "components": ["components/"],
+      "utils": ["utils/"],
+      "views": ["views"]
+    },
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

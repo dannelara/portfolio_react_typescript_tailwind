@@ -73,7 +73,7 @@ const DocFinder: React.FC<DocFinderProps> = ({}) => {
   useEffect(() => {}, [articles]);
 
   return (
-    <div className="relative h-full w-full flex border-2 flex-wrap">
+    <div className="relative h-full sm: hidden w-full md:flex border-2 flex-wrap ">
       <div className="doc_finder_nav h-[10%] w-full flex gap-2  items-center justify-center flex_childred_full border-b-2">
         <div className="h-full w-1/3 items-center justify-center">
           <input
@@ -89,12 +89,14 @@ const DocFinder: React.FC<DocFinderProps> = ({}) => {
             className="h-1/2 w-[90%] border-2 focus:bg-gray-100 focus:outline-none"
             placeholder="Keyword eg. name or word"
             onChange={(e) => setStartDate(e.currentTarget.value)}
+            disabled
           />
           <input
             type="date"
             className="h-1/2 w-[90%] border-2 focus:bg-gray-100 focus:outline-none"
             placeholder="Keyword eg. name or word"
             onChange={(e) => setEndDate(e.currentTarget.value)}
+            disabled
           />
         </div>
         <div className="h-full w-1/3 items-center justify-center">

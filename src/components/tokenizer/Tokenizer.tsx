@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
-import MyOwnTokenizer from "utils/tokenizer/MyOwntokenizer";
+import MyOwnTokenizer from "components/tokenizer/MyOwntokenizer";
 interface TokenizerProps {}
 
 const Tokenizer: React.FC<TokenizerProps> = ({}) => {

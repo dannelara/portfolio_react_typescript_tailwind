@@ -1,6 +1,6 @@
 import React from "react";
-import { AlgoView } from "./algo_view/AlgoView";
-import { Card } from "./card/Card";
+import { AlgoView } from "../algo_view/AlgoView";
+import { Card } from "components";
 import algo_data from "../../assets/data/algorithms";
 import { Projects } from "../projects/Projects";
 interface PortfolioProps {}
