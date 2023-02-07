@@ -2,9 +2,7 @@ import { GlobalStateContext } from "global/GlobalState";
 import React, { useEffect } from "react";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
-interface SectionTrackerProps {}
-
-export const SectionTracker: React.FC<SectionTrackerProps> = ({}) => {
+export const SectionTracker: React.FC = ({}) => {
   const sections_paths = ["/#portfolio", "/#skills", "/#contact"];
   const { current_section, set_current_section } =
     React.useContext(GlobalStateContext);
@@ -24,10 +22,7 @@ export const SectionTracker: React.FC<SectionTrackerProps> = ({}) => {
   };
 
   return (
-    <div
-      className="h-fit w-full cursor-pointer hover_underline_vertical"
-      onClick={handleNext}
-    >
+    <div className="h-fit w-full cursor-pointer" onClick={handleNext}>
       {current_section === 0 ? (
         <>
           <span className="controll h-fit w-full flex items-center justify-center mb-3">

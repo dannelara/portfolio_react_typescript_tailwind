@@ -154,6 +154,7 @@ Main
 .svg_bright > svg > path {
   stroke: white;
 }
+
 .fade_in {
   animation: fadeIn 0.5s;
 }
@@ -210,6 +211,7 @@ Main
   display: flex;
   gap: 5px;
   padding: 0.4em;
+  flex-direction: column;
 }
 
 .portfolio_cards > div {
@@ -233,7 +235,7 @@ Main
   min-width: 14em;
   padding: 0.5em;
   text-align: center;
-  transform: rotate(-90deg);
+
   transition: all 0.5s;
   text-transform: uppercase;
   color: #ffffff;
@@ -242,7 +244,7 @@ Main
 
 .portfolio_cards > div:hover .transform_span {
   color: rgb(27, 27, 47);
-  transform: rotate(0);
+  transform: scale(120%);
 }
 
 /*

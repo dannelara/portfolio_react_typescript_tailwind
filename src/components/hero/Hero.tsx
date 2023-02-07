@@ -6,7 +6,7 @@ export const Hero: React.FC = ({}) => {
     <div className="card flex items-center justify-center h-full w-full">
       <div className="h-full w-2/3 overflow-hidden">
         <div className="h-1/3 w-full flex items-center justify-center  mdl: text-center xlg:text-left">
-          <h1 className="bg-transparent hero-title text-white hover_underline">
+          <h1 className="bg-transparent hero-title text-white">
             Web Development by Daniel Lara
           </h1>
         </div>

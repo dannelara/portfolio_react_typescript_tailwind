@@ -13,6 +13,7 @@ export const Contact: React.FC<ContactProps> = ({}) => {
   const isInViewport1 = useIsInViewport(ref1);
 
   useEffect(() => {
+    console.log("here");
     if (isInViewport1) {
       set_current_section((prev: number) => (prev = 0));
     }
