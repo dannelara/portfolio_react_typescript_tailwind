@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// interface State {
-//   full_screen: Boolean;
-// }
-
 export const GlobalStateContext = React.createContext<any>(null);
 
 const GlobalState = ({

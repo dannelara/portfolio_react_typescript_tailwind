@@ -6,6 +6,7 @@ import DocFinder from "./docFinder/DocFinder";
 import Tokenizer from "./tokenizer/Tokenizer";
 import { Bar } from "./bar/Bar";
 import { SectionTracker } from "./sectionTracker/SectionTracker";
+import { Section } from "./section/Section";
 export {
   Header,
   Hero,
@@ -15,4 +16,5 @@ export {
   Tokenizer,
   Bar,
   SectionTracker,
+  Section,
 };
